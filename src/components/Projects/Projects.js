@@ -34,7 +34,7 @@ function Projects() {
               imgPath={CHATAPP}
               isBlog={false}
               title="Chat-app"
-              description="Developed a real-time chat application using the MERN stack (MongoDB, Express.js, React, Node.js) and Socket.IO to enable seamless communication."
+              description="Developed a real-time chat application using the MERN stack (MongoDB,Express.js,React,Node.js) and Socket.IO to enable seamless communication"
               ghLink="https://github.com/Jeelislive/chat-app-frontend"
               demoLink="https://chat-app-frontend-peach-zeta.vercel.app/"
             />
