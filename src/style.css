@@ -11,10 +11,10 @@ html {
     rgba(12, 10, 22, 0.863)
   );
 
-  --imp-text-color: #c770f0;
+  --imp-text-color: #4db8ff; /* New modern blue accent */
 }
 
-.purple {
+.purple { /* Will be replaced by new accent or specific styling */
   color: var(--imp-text-color) !important;
 }
 
@@ -57,18 +57,18 @@ button:focus {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #2d1950;
+  background: #222; /* Darker grey track */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(178, 121, 216, 0.959);
+  background: #555; /* Medium grey handle */
   border-radius: 12px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(222, 130, 235, 0.911);
+  background: #777; /* Lighter grey handle on hover */
   border-radius: 12px;
 }
 
@@ -97,7 +97,7 @@ button:focus {
 
 .navbar-toggler span {
   display: block !important;
-  background-color: #be50f4 !important;
+  background-color: #ffffff !important; /* White toggler lines for better contrast */
   height: 4px !important;
   width: 27px !important;
   margin-top: 5px !important;
@@ -194,7 +194,7 @@ button:focus {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #c95bf5;
+  background: var(--imp-text-color); /* New accent for nav link hover */
   bottom: 1px;
   left: 0;
   z-index: -1;
@@ -256,18 +256,26 @@ button:focus {
 
 .home-section {
   position: relative;
-  z-index: -1;
+  /* z-index: -1; /* Particles are commented out */
   background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
-  background-position: top center;
+  background-attachment: fixed; /* Parallax-like effect */
+  background-position: center center; /* Center background */
   background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
+  background-size: cover; /* Ensure background covers the area */
+  padding-top: 60px !important; /* Increased top padding */
+  padding-bottom: 60px !important; /* Increased bottom padding */
+  min-height: 100vh; /* Full viewport height */
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
 }
 
 .home-content {
-  padding: 9rem 0 2rem !important;
+  padding: 4rem 0 !important; /* Adjusted padding for balance with flex centering */
   color: whitesmoke;
   text-align: left;
+  width: 100%; /* Ensure it can take full width if needed */
+  max-width: 1200px; /* Constrain width on very large screens */
 }
 
 .heading {
@@ -281,27 +289,109 @@ button:focus {
 }
 
 .main-name {
-  color: #cd5ff8;
+  color: var(--imp-text-color); /* New accent for main name */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
 }
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #be6adf !important;
+  color: var(--imp-text-color) !important; /* New accent for typewriter */
   font-weight: 600 !important;
 }
 .Typewriter__cursor {
   font-size: 2.4em !important;
-  color: #b562d6 !important;
+  color: var(--imp-text-color) !important; /* New accent for typewriter cursor */
 }
 
 @media (max-width: 767px) {
+  .home-content {
+    padding: 4rem 0 2rem !important; /* Reduced top padding */
+    text-align: center; /* Center align content on small screens */
+  }
+  .home-header {
+    text-align: center !important; /* Ensure header content is centered */
+  }
+  .heading,
+  .heading-name {
+    padding-left: 0 !important; /* Remove fixed left padding */
+    font-size: 1.8em !important; /* Adjust font size for smaller screens */
+  }
+  .heading-name {
+    font-size: 2em !important; /* Slightly larger for name */
+  }
   .Typewriter__wrapper {
     font-size: 1.4em !important;
     font-weight: 500 !important;
-    position: absolute !important;
+    /* position: absolute !important; Consider if this is still needed or adjust */
+    text-align: center !important; /* Ensure typewriter is centered */
+    padding-left: 0 !important; /* Reset padding if any from inline style */
+    padding-right: 0 !important; /* Reset padding if any from inline style */
   }
   .Typewriter__cursor {
     display: none !important;
+  }
+  /* Adjust padding for the div wrapping Typewriter in Home.js */
+  .home-header > div[style*="padding: 50px"] {
+    padding: 20px 0 !important; /* Reduce padding and center */
+    text-align: center !important;
+  }
+
+  .home-section .row > .col-md-5 { /* Target the image column on mobile */
+    text-align: center; /* Center the image within its column when stacked */
+    padding-top: 30px; /* Add some space above the image when stacked */
+  }
+  .home-section .img-fluid { /* Ensure image itself respects text-align or is block centered */
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  /* Project Section adjustments */
+  .project-section {
+    padding-top: 80px !important; /* Reduce top padding */
+  }
+  .project-heading {
+    font-size: 1.8em !important; /* Adjust font size */
+    text-align: center; /* Center heading */
+  }
+  .project-section > .container > p { /* Targeting the intro paragraph */
+    text-align: center; /* Center paragraph */
+  }
+  .project-card {
+    padding-top: 25px !important; /* Reduce card padding */
+    padding-bottom: 25px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* About Section adjustments */
+  .about-section {
+    padding-top: 80px !important; /* Reduce top padding */
+  }
+  /* Targeting the h1 in About.js specifically if it doesn't have a class */
+  .about-section .row > div > h1[style*="font-size: 2.1em"] { /* More specific selector for "Know Who I'M" */
+    font-size: 1.8em !important; /* Adjust font size */
+    text-align: center;
+  }
+  .tech-icons {
+    font-size: 2.5em !important; /* Reduce icon size */
+    margin: 10px !important;
+  }
+  .about-img { /* Ensure this rule is effective, it was already present */
+    padding-top: 20px !important; /* Add some top padding for spacing when stacked */
+    padding-bottom: 30px !important; /* Add some bottom padding */
+  }
+   .about-section .col-md-7 { /* Targeting the text column */
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Resume Section adjustments */
+  .resume-section {
+    padding-top: 80px !important; /* Reduce top padding */
+  }
+  .resume { /* Styles for the Row containing the PDF document */
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
   }
 }
 
@@ -371,7 +461,7 @@ button:focus {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #68187a;
+  background: #333; /* Dark grey for social icon background */
   transition: 0.5s;
   transform: scale(0.9);
   z-index: -1;
@@ -379,13 +469,13 @@ button:focus {
 
 .home-social-icons:hover::before {
   transform: scale(1.1);
-  box-shadow: 0 0 15px #801f95;
+  box-shadow: 0 0 15px var(--imp-text-color); /* New accent shadow on hover */
 }
 
 .home-social-icons:hover {
-  color: #87209e;
-  box-shadow: 0 0 5px #87209e;
-  text-shadow: 0 0 2px #87209e;
+  color: var(--imp-text-color); /* New accent color on hover */
+  box-shadow: 0 0 5px var(--imp-text-color); /* New accent shadow */
+  text-shadow: 0 0 2px var(--imp-text-color); /* New accent text shadow */
 }
 
 .social-icons {
@@ -395,7 +485,7 @@ button:focus {
 }
 
 .icon-colour {
-  color: #700c86 !important;
+  color: var(--imp-text-color) !important; /* New accent for icons */
 }
 
 /* --------- */
@@ -439,7 +529,7 @@ button:focus {
 }
 
 .blockquote-footer {
-  color: #a588c0 !important;
+  color: #aaa !important; /* Lighter grey for blockquote footer */
 }
 /* --------- */
 /* Projects */
@@ -460,17 +550,117 @@ button:focus {
 }
 
 .project-card-view {
-  box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
+  box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2) !important; /* Softer, darker shadow */
   color: white !important;
-  background-color: transparent !important;
-  opacity: 0.9 !important;
+  background-color: #1e1e1e !important; /* Dark card background */
+  opacity: 0.95 !important; /* Slightly increased opacity for better text visibility */
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
+  display: flex; /* Added for flex layout */
+  flex-direction: column; /* Stack card elements vertically */
+}
+.project-card-view .card-body {
+  flex-grow: 1; /* Allow card body to take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes buttons to the bottom */
+}
+
+.project-card-view .card-title {
+  color: var(--imp-text-color) !important; /* Use accent color for title */
+  font-size: 1.4rem !important; /* Increased font size */
+  font-weight: bold !important;
+  margin-bottom: 15px !important; /* Space below title */
+}
+
+.project-card-view .card-text {
+  font-size: 0.95rem !important; /* Slightly increased font size */
+  line-height: 1.6 !important; /* Improved line height for readability */
+  color: #e0e0e0 !important; /* Lighter grey for description text */
+  margin-bottom: 20px !important; /* More space before buttons */
+  text-align: left !important; /* Overriding justify for potentially better flow */
+}
+
+.project-card-view .card-body {
+  flex-grow: 1; /* Allow card body to take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes buttons to the bottom */
+}
+
+.project-card-view .card-title {
+  color: var(--imp-text-color) !important; /* Use accent color for title */
+  font-size: 1.4rem !important; /* Increased font size */
+  font-weight: bold !important;
+  margin-bottom: 15px !important; /* Space below title */
+}
+
+.project-card-view .card-text {
+  font-size: 0.95rem !important; /* Slightly increased font size */
+  line-height: 1.6 !important; /* Improved line height for readability */
+  color: #e0e0e0 !important; /* Lighter grey for description text */
+  margin-bottom: 20px !important; /* More space before buttons */
+  text-align: left !important; /* Overriding justify for potentially better flow */
+}
+
+.blog-card-view .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-card-view .card-title {
+  color: var(--imp-text-color) !important;
+  font-size: 1.4rem !important;
+  font-weight: bold !important;
+  margin-bottom: 15px !important;
+}
+
+.blog-card-view .card-text {
+  font-size: 0.95rem !important;
+.card-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 10px; /* Space between buttons */
+  margin-top: auto; /* Pushes buttons to the bottom of the card body */
+  padding-top: 15px; /* Add some space above the buttons */
+}
+
+.card-buttons .btn {
+  flex-grow: 1; /* Allow buttons to grow and share space */
+  min-width: 120px; /* Minimum width for each button */
+  margin-bottom: 0 !important; /* Reset bottom margin from Bootstrap if any */
+}
+
+.card-buttons .btn-demo {
+  /* Specific styles for demo button if needed, e.g., different color */
+  /* background-color: #28a745 !important; /* Example: Green demo button */
+  /* border-color: #28a745 !important; */
+}
+
+/* Responsive adjustments for buttons if needed, though flex-wrap and flex-grow should handle most cases */
+@media (max-width: 576px) {
+  .card-buttons {
+    flex-direction: column; /* Stack buttons vertically on very small screens */
+  }
+  .card-buttons .btn {
+    width: 100%; /* Make buttons full width when stacked */
+    margin-bottom: 10px !important; /* Add margin between stacked buttons */
+  }
+  .card-buttons .btn:last-child {
+    margin-bottom: 0 !important; /* Remove margin from the last button when stacked */
+  }
+}
+  line-height: 1.6 !important;
+  color: #e0e0e0 !important;
+  margin-bottom: 20px !important;
+  text-align: left !important;
 }
 .project-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+  box-shadow: 0 8px 16px 0px rgba(0, 0, 0, 0.3) !important; /* Enhanced shadow on hover */
 }
 
 .blog-card {
@@ -482,8 +672,8 @@ button:focus {
 }
 
 .blog-card-view {
-  background-color: transparent !important;
-  box-shadow: 0 3px 3px 2px rgba(145, 77, 161, 0.459) !important;
+  background-color: #1e1e1e !important; /* Dark card background */
+  box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.2) !important; /* Softer, darker shadow */
   color: white !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
@@ -501,7 +691,7 @@ button:focus {
 .blog-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
-  box-shadow: 0 3px 3px 5px rgba(155, 88, 173, 0.65) !important;
+  box-shadow: 0 6px 12px 0px rgba(0, 0, 0, 0.3) !important; /* Enhanced shadow on hover */
 }
 
 .card-img-top {
@@ -518,14 +708,14 @@ button:focus {
 
 .btn-primary {
   color: #fff !important;
-  background-color: #623686 !important;
-  border-color: #623686 !important;
+  background-color: var(--imp-text-color) !important; /* New accent for buttons */
+  border-color: var(--imp-text-color) !important; /* New accent for button borders */
 }
 
 .btn-primary:hover {
   color: #fff !important;
-  background-color: #6d20c5d7 !important;
-  border-color: #6d20c5d7 !important;
+  background-color: #3ca5e0 !important; /* Slightly darker shade of accent on hover */
+  border-color: #3ca5e0 !important; /* Slightly darker shade for border on hover */
 }
 .btn:focus {
   outline: none !important;
@@ -555,12 +745,12 @@ button:focus {
   margin: 15px !important;
   padding: 10px !important;
   opacity: 0.93 !important;
-  border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
+  border: 1.7px solid #555 !important; /* Darker border for tech icons */
   vertical-align: middle !important;
   text-align: center !important;
   border-radius: 5px !important;
   display: table !important;
-  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  box-shadow: 4px 5px 4px 3px rgba(0, 0, 0, 0.2) !important; /* Softer, darker shadow */
   overflow: hidden !important;
   transition: all 0.4s ease 0s !important;
 }
@@ -574,7 +764,7 @@ button:focus {
 .tech-icons:hover {
   transform: scale(1.05) !important;
   overflow: hidden !important;
-  border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
+  border: 2.2px solid var(--imp-text-color) !important; /* New accent border on hover */
 }
 .tech-icon-images {
   padding: 20px !important;
@@ -645,14 +835,14 @@ button:focus {
 .resume .resume-item {
   padding: 0 0 10px 25px;
   margin-top: -2px;
-  border-left: 2px solid #8a49a8;
+  border-left: 2px solid var(--imp-text-color); /* New accent for resume item border */
   position: relative;
 }
 
 .resume .resume-item .resume-title {
   line-height: 18px;
   font-size: 0.9em;
-  background: #5234795d;
+  background: #333333a0; /* Darker background for resume title */
   padding: 8px 15px;
   display: inline-block;
   font-weight: 600;
@@ -682,7 +872,7 @@ button:focus {
   left: -9px;
   top: 0;
   background: #fff;
-  border: 2px solid #8a49a8;
+  border: 2px solid var(--imp-text-color); /* New accent for resume item bullet */
 }
 
 .like-item {
@@ -692,8 +882,8 @@ button:focus {
 }
 
 .like-btn {
-  background-color: #934cce5e !important;
-  border-color: #934cce5e !important;
+  background-color: rgba(77, 184, 255, 0.368) !important; /* Lighter, transparent accent */
+  border-color: rgba(77, 184, 255, 0.368) !important;
   padding: 0.25rem 0.98rem !important;
   border-radius: 5px !important;
   line-height: 1.4 !important;
@@ -702,8 +892,8 @@ button:focus {
 
 .like-btn:hover {
   transform: translateY(-2px) !important;
-  background-color: #a24dd386 !important;
-  border-color: #a24dd386 !important;
+  background-color: rgba(77, 184, 255, 0.525) !important; /* Slightly more opaque accent on hover */
+  border-color: rgba(77, 184, 255, 0.525) !important;
 }
 
 .animate-like {
@@ -727,7 +917,7 @@ button:focus {
 
 .fork-btn-inner {
   line-height: 1.4em !important;
-  background-color: #934cce5e !important;
+  background-color: rgba(77, 184, 255, 0.368) !important; /* Lighter, transparent accent */
   padding: 0.25rem 1.1rem !important;
   vertical-align: middle !important;
   text-align: center !important;
@@ -735,8 +925,8 @@ button:focus {
 
 .fork-btn-inner:hover {
   transform: translateY(-2px) !important;
-  background-color: #a24dd386 !important;
-  border-color: #a24dd386 !important;
+  background-color: rgba(77, 184, 255, 0.525) !important; /* Slightly more opaque accent on hover */
+  border-color: rgba(77, 184, 255, 0.525) !important;
 }
 .fork-btn-inner::after {
   display: none !important;

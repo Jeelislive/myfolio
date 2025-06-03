@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
+// import Particle from "../Particle"; // Removed Particle import
 import pdf from "../../Assets/../Assets/Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -18,7 +18,7 @@ function ResumeNew() {
   return (
     <div>
       <Container fluid className="resume-section">
-        <Particle />
+        {/* <Particle /> */} {/* Removed Particle component */}
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"

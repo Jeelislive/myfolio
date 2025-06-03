@@ -35,12 +35,21 @@ function Particle() {
         },
         interactivity: {
           events: {
+            onhover: {
+              enable: true,
+              mode: "trail",
+            },
             onclick: {
               enable: true,
               mode: "push",
             },
           },
           modes: {
+            trail: {
+              delay: 0.01,
+              quantity: 3,
+              pauseOnStop: false
+            },
             push: {
               particles_nb: 1,
             },
