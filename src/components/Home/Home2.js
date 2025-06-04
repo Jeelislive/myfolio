@@ -19,37 +19,41 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I'm passionate in programming and I have at least learnt
-              something, I think… 🤷‍♂️
+              I'm a dedicated and enthusiastic programmer, constantly exploring the ever-evolving world of technology. I've cultivated a solid understanding of software development principles and enjoy tackling new challenges.
               <br />
-              <br />I am fluent in classics like
+              <br />I have a strong command of core web technologies, including
               <i>
-                <b className="purple"> Java, Javascript and TypeScript. </b>
+                <b className="purple"> JavaScript and TypeScript</b>
+              </i>
+              , and I'm adept at building robust and scalable applications.
+              <br />
+              <br />
+              My primary areas of interest lie in crafting innovative
+              <i>
+                <b className="purple"> Web Technologies and Products</b>
+              </i>
+              . I'm also passionate about creating visually appealing and user-friendly interfaces, with a keen eye for
+              <i>
+                <b className="purple"> UI/UX Design </b>
+              </i>
+               and even dabbling in
+              <i>
+                <b className="purple"> Logo Designing</b>.
               </i>
               <br />
               <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                  Logo Designing.
-                </b>
-              </i>
-              <br />
-              <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
+              I thrive on bringing ideas to life using modern development practices. I'm proficient in leveraging the power of <b className="purple">Node.js</b> for back-end development and utilizing
               <i>
                 <b className="purple">
                   {" "}
-                  Modern Javascript Library and Frameworks
+                  cutting-edge JavaScript libraries and frameworks
                 </b>
               </i>
-              &nbsp; like
+              &nbsp; such as
               <i>
                 <b className="purple"> React.js and Next.js</b>
               </i>
+               to build dynamic and responsive user experiences.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

@@ -23,7 +23,7 @@ function Projects() {
             <ProjectCard
               imgPath={NOC}
               isBlog={false}
-              title="NOC Issuance System"
+              title="NOC Issuance System for fire department"
               description="Hackathon - SIH. Automated System which eliminates manual workflows and paperwork, reducing processing time by 50%. Features: Automated Workflow, Secure File Uploads (Cloudinary), Real-time Notifications (Socket.IO)."
               ghLink="https://github.com/Jeelislive/NOC-client"
               demoLink="https://noc-clientt.vercel.app/"
@@ -34,7 +34,7 @@ function Projects() {
             <ProjectCard
               imgPath={currency} // Placeholder: Replace with actual image for AI Trip Planner e.g., aiTripPlannerImg
               isBlog={false}
-              title="AI Trip Planner"
+              title="AI Trip Planner Using Weather Insights"
               description="Personal Project. AI-powered trip planner according to weather insights, which gives travel itineraries based on AI. Features: Anything Near me, AI-Driven Recommendations, Weather Integration."
               ghLink="https://github.com/Jeelislive/WeatherForecaste"
               demoLink="https://weather-forecaste-vpe7.vercel.app/"
@@ -46,7 +46,7 @@ function Projects() {
               imgPath={CHATAPP}
               isBlog={false}
               title="Real-Time Chat Application"
-              description="Full-stack real-time chat application. Features: Instant Messaging, Group Chats."
+              description="Full-stack real-time chat application. Features: Instant Messaging, Group Chats, File Sharing, Notificarions, User Authentication. Built with React, Node.js, and Socket.IO for real-time communication."
               ghLink="https://github.com/Jeelislive/chat-app-frontend"
               demoLink="https://chat-app-frontend-peach-zeta.vercel.app/"
             />
