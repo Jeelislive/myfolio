@@ -1,3 +1,8 @@
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased; /* For smoother fonts on WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* For smoother fonts on Firefox */
+}
 html {
   --section-background-color: linear-gradient(
     to bottom left,
@@ -204,6 +209,73 @@ button:focus {
 .navbar-nav .nav-item a:hover::after {
   width: 100%;
 }
+/* --------- */
+/* Animated Logo Text */
+/* --------- */
+.animated-logo-text {
+  font-family: "Courier New", Courier, monospace; /* Techy font */
+  font-size: 1.5em; /* Adjust as needed */
+  font-weight: bold;
+  color: var(--imp-text-color);
+  text-shadow: 0 0 5px rgba(var(--imp-text-color-rgb), 0.7);
+  animation: logoPulse 2s infinite alternate;
+  display: inline-block; /* Important for some animations */
+  padding: 0.2em 0.5em; /* Add some padding */
+  border: 1px solid transparent; /* For potential border animation */
+  transition: all 0.3s ease-in-out;
+  line-height: 1; /* Ensure it aligns well within the navbar */
+}
+
+@keyframes logoPulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 5px rgba(var(--imp-text-color-rgb), 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(var(--imp-text-color-rgb), 1);
+/* Home CTA Button */
+.home-cta-button {
+  font-size: 1.1em !important;
+  padding: 0.8rem 2rem !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease-in-out !important;
+  box-shadow: 0 4px 15px rgba(var(--imp-text-color-rgb), 0.3);
+  font-weight: 600;
+  text-transform: uppercase; /* Optional: makes text uppercase */
+  letter-spacing: 1px; /* Optional: adds some letter spacing */
+}
+
+.home-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(var(--imp-text-color-rgb), 0.5);
+}
+
+/* Responsive adjustments for the CTA button container */
+@media (max-width: 767px) {
+  .home-header > div[style*="marginTop: 30px"] { /* Targets the button container */
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin-top: 25px !important; /* Adjust margin for mobile */
+    margin-bottom: 20px !important; /* Add some bottom margin on mobile */
+  }
+  .home-cta-button {
+    font-size: 1em !important; /* Slightly smaller on mobile */
+    padding: 0.7rem 1.8rem !important;
+  }
+}
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 5px rgba(var(--imp-text-color-rgb), 0.7);
+  }
+}
+
+.animated-logo-text:hover {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  border-color: var(--imp-text-color);
+}
 
 /* --------- */
 /* Home section */
@@ -256,11 +328,11 @@ button:focus {
 
 .home-section {
   position: relative;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-image: var(--image-gradient), url(./Assets/home-bg.jpg); */ /* Removed for global particle background */
+  /* background-attachment: fixed; */
+  /* background-position: center center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
   padding-top: 80px !important; /* Adjusted padding */
   padding-bottom: 80px !important; /* Adjusted padding */
   min-height: 100vh;
@@ -430,7 +502,7 @@ button:focus {
   position: relative;
   padding-bottom: 80px !important; /* Increased padding for better spacing */
   padding-top: 80px !important;
-  background-color: #0c0513; /* Match preloader or a dark theme color */
+  /* background-color: #0c0513; */ /* Removed for global particle background */
 }
 
 .home-about-description {
@@ -575,7 +647,7 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  /* background-image: var(--section-background-color) !important; */ /* Removed for global particle background */
 }
 
 .project-card {
@@ -764,7 +836,7 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  /* background-image: var(--section-background-color) !important; */ /* Removed for global particle background */
   color: white !important;
 }
 
@@ -831,7 +903,7 @@ button:focus {
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  /* background-image: var(--section-background-color) !important; */ /* Removed for global particle background */
   color: white !important;
 }
 

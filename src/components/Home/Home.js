@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap"; // Added Button
+import { Link } from "react-router-dom"; // Added Link
 import homeLogo from "../../Assets/home-main.svg";
-// import Particle from "../Particle"; // Removed Particle import
+// import Particle from "../Particle"; // Moved to App.js
 import Home2 from "./Home2";
 import Type from "./Type";
 
@@ -9,7 +10,7 @@ function Home() {
   return (
     <section>
       <Container fluid className="home-section" id="home">
-        {/* <Particle /> */} {/* Removed Particle component */}
+        {/* <Particle /> */} {/* Moved to App.js */}
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
@@ -27,6 +28,14 @@ function Home() {
 
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
+              </div>
+
+              <div style={{ marginTop: "30px", textAlign: "left", paddingLeft: "50px" }}>
+                <Link to="/project">
+                  <Button variant="primary" size="lg" className="home-cta-button">
+                    View My Work
+                  </Button>
+                </Link>
               </div>
             </Col>
 
