@@ -816,7 +816,7 @@ button:focus {
   color: #fff !important;
   background-color: #3ca5e0 !important; /* Slightly darker shade of accent on hover */
   border-color: #3ca5e0 !important; /* Slightly darker shade for border on hover */
-}
+}d
 .btn:focus {
   outline: none !important;
   box-shadow: none !important;

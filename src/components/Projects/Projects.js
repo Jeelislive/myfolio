@@ -1,19 +1,16 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
-// import Particle from "../Particle"; // Removed Particle import
-import currency from "../../Assets/Projects/currency.jpg"; // Placeholder for AI Trip Planner, update if new image available
 import NOC from "../../Assets/Projects/NOC.jpg";
+import currency from "../../Assets/Projects/currency.jpg";
 import CHATAPP from "../../Assets/Projects/chatapp.jpg";
-// import blog from "../../Assets/Projects/blog.png"; // Example if you add a new image for AI Trip Planner
 
 function Projects() {
   return (
     <Container fluid className="project-section">
-      {/* <Particle /> */} {/* Removed Particle component */}
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          My Recent <strong className="purple">Works</strong>
         </h1>
         <p style={{ color: "white" }}>
           Here are a few projects I've worked on recently.
@@ -22,6 +19,7 @@ function Projects() {
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={NOC}
+              videoLink="https://player.cloudinary.com/embed/?cloud_name=dupv4u12a&public_id=Noc-project-showcase_loy8u4&profile=cld-looping"
               isBlog={false}
               title="NOC Issuance System for fire department"
               description="Hackathon - SIH. Automated System which eliminates manual workflows and paperwork, reducing processing time by 50%. Features: Automated Workflow, Secure File Uploads (Cloudinary), Real-time Notifications (Socket.IO)."
@@ -32,10 +30,11 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={currency} // Placeholder: Replace with actual image for AI Trip Planner e.g., aiTripPlannerImg
+              imgPath={currency}
+              videoLink="https://player.cloudinary.com/embed/?cloud_name=dupv4u12a&public_id=journey-showcase_uhnpkl&profile=cld-looping"
               isBlog={false}
               title="AI Trip Planner Using Weather Insights"
-              description="Personal Project. AI-powered trip planner according to weather insights, which gives travel itineraries based on AI. Features: Anything Near me, AI-Driven Recommendations, Weather Integration."
+              description="AI-powered trip planner according to weather insights. It gives travel itineraries based on AI, with features like Anything Near Me, AI-driven Recommendations, and Weather Integration."
               ghLink="https://github.com/Jeelislive/WeatherForecaste"
               demoLink="https://weather-forecaste-vpe7.vercel.app/"
             />
@@ -44,9 +43,10 @@ function Projects() {
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={CHATAPP}
+              videoLink="https://player.cloudinary.com/embed/?cloud_name=dupv4u12a&public_id=chatapp-showcase_cmcrue&profile=cld-looping"
               isBlog={false}
               title="Real-Time Chat Application"
-              description="Full-stack real-time chat application. Features: Instant Messaging, Group Chats, File Sharing, Notificarions, User Authentication. Built with React, Node.js, and Socket.IO for real-time communication."
+              description="A full-stack real-time chat application built with React, Node.js, and Socket.IO. Features instant messaging, group chats, file sharing, and notifications."
               ghLink="https://github.com/Jeelislive/chat-app-frontend"
               demoLink="https://chat-app-frontend-peach-zeta.vercel.app/"
             />

@@ -1,0 +1,22 @@
+.project-card-view {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  
+  .project-card-view:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  }
+  
+  .video-wrapper iframe {
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeIn 0.7s forwards ease-in;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
